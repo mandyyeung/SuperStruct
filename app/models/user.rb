@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :subcontractors
   has_many :pcos, through: :subcontractors
+  has_many :comments
 end
