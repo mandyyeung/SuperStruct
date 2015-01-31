@@ -1,0 +1,133 @@
+<%= form_for(@pco) do |f| %>
+  <% if @pco.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pco.errors.count, "error") %> prohibited this pco from being saved:</h2>
+
+      <ul>
+      <% @pco.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :num %><br>
+    <%= f.text_field :num %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :discovery %><br>
+    <%= f.text_area :discovery %>
+  </div>
+  <div class="field">
+    <%= f.label :sub_proposal_num %><br>
+    <%= f.number_field :sub_proposal_num %>
+  </div>
+  <div class="field">
+    <%= f.label :al_num %><br>
+    <%= f.text_field :al_num %>
+  </div>
+  <div class="field">
+    <%= f.label :ddc_co_num %><br>
+    <%= f.text_field :ddc_co_num %>
+  </div>
+  <div class="field">
+    <%= f.label :sub_co_num %><br>
+    <%= f.text_field :sub_co_num %>
+  </div>
+  <div class="field">
+    <%= f.label :proposal_received %><br>
+    <%= f.date_select :proposal_received %>
+  </div>
+  <div class="field">
+    <%= f.label :df_submitted %><br>
+    <%= f.date_select :df_submitted %>
+  </div>
+  <div class="field">
+    <%= f.label :df_returned %><br>
+    <%= f.date_select :df_returned %>
+  </div>
+  <div class="field">
+    <%= f.label :sent_to_gt %><br>
+    <%= f.date_select :sent_to_gt %>
+  </div>
+  <div class="field">
+    <%= f.label :cleared_gt %><br>
+    <%= f.date_select :cleared_gt %>
+  </div>
+  <div class="field">
+    <%= f.label :sent_to_ddc %><br>
+    <%= f.date_select :sent_to_ddc %>
+  </div>
+  <div class="field">
+    <%= f.label :ddc_approved %><br>
+    <%= f.date_select :ddc_approved %>
+  </div>
+  <div class="field">
+    <%= f.label :eao %><br>
+    <%= f.text_field :eao %>
+  </div>
+  <div class="field">
+    <%= f.label :approved %><br>
+    <%= f.date_select :approved %>
+  </div>
+  <div class="field">
+    <%= f.label :approximate %><br>
+    <%= f.text_field :approximate %>
+  </div>
+  <div class="field">
+    <%= f.label :proposed %><br>
+    <%= f.text_field :proposed %>
+  </div>
+  <div class="field">
+    <%= f.label :tstv_estimate %><br>
+    <%= f.text_field :tstv_estimate %>
+  </div>
+  <div class="field">
+    <%= f.label :gt_estimate %><br>
+    <%= f.text_field :gt_estimate %>
+  </div>
+  <div class="field">
+    <%= f.label :submitted %><br>
+    <%= f.text_field :submitted %>
+  </div>
+  <div class="field">
+    <%= f.label :ddc_approved %><br>
+    <%= f.text_field :ddc_approved %>
+  </div>
+  <div class="field">
+    <%= f.label :bc_to %><br>
+    <%= f.text_field :bc_to %>
+  </div>
+  <div class="field">
+    <%= f.label :deduct %><br>
+    <%= f.text_field :deduct %>
+  </div>
+  <div class="field">
+    <%= f.label :bc_from %><br>
+    <%= f.text_field :bc_from %>
+  </div>
+  <div class="field">
+    <%= f.label :add %><br>
+    <%= f.text_field :add %>
+  </div>
+  <div class="field">
+    <%= f.label :used_allowance %><br>
+    <%= f.check_box :used_allowance %>
+  </div>
+  <div class="field">
+    <%= f.label :tdrive %><br>
+    <%= f.text_field :tdrive %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

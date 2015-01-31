@@ -11,10 +11,69 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150131050712) do
+ActiveRecord::Schema.define(version: 20150131054354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "pcos", force: :cascade do |t|
+    t.decimal  "num"
+    t.string   "type"
+    t.string   "description"
+    t.text     "discovery"
+    t.integer  "sub_proposal_num"
+    t.decimal  "al_num"
+    t.decimal  "ddc_co_num"
+    t.decimal  "sub_co_num"
+    t.date     "proposal_received"
+    t.date     "df_submitted"
+    t.date     "df_returned"
+    t.date     "sent_to_gt"
+    t.date     "cleared_gt"
+    t.date     "sent_to_ddc"
+    t.decimal  "ddc_approved"
+    t.string   "eao"
+    t.date     "approved"
+    t.decimal  "approximate"
+    t.decimal  "proposed"
+    t.decimal  "tstv_estimate"
+    t.decimal  "gt_estimate"
+    t.decimal  "submitted"
+    t.string   "bc_to"
+    t.decimal  "deduct"
+    t.string   "bc_from"
+    t.decimal  "add"
+    t.boolean  "used_allowance"
+    t.string   "tdrive"
+    t.integer  "subcontractor_id"
+    t.integer  "status_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  create_table "statuses", force: :cascade do |t|
+    t.string   "filter"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "subcontractors", force: :cascade do |t|
+    t.string   "bp"
+    t.string   "company"
+    t.string   "contact"
+    t.string   "address"
+    t.string   "phone"
+    t.string   "trade"
+    t.decimal  "contract_value"
+    t.string   "logo"
+    t.text     "notes"
+    t.integer  "user_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "subcontractors", ["user_id"], name: "index_subcontractors_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name",                                                   null: false

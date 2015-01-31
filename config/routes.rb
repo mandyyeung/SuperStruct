@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :pcos
+
+  resources :statuses
+
+  resources :subcontractors
+
   devise_for :users
 
   devise_scope :user do
