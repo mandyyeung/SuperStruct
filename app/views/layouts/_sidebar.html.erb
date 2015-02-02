@@ -1,1 +1,62 @@
-This is the sidebar
+<ul class="sidebar-menu" id="accordion-menu" role="tablist" aria-multiselectable="false">
+  <li class="menu-header">
+    <a class="active" href="/">
+      <i class="fa fa-dashboard"></i>
+      <span>Dashboard</span>
+    </a>
+  </li>
+  <li class="menu-header" role="tab" id="headingOne">
+    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+      <i class="fa fa-list-alt"></i>
+      <span>Subcontractor Profiles</span>
+    </a>
+  </li>
+  <ul id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+    <li><a href="#">Donaldson East</a></li>
+    <li><a href="#">Giaquinto</a></li>
+    <li><a href="#">Jtrack</a></li>
+  </ul>
+  <li class="menu-header">
+    <%= link_to '<i class="fa fa-plus"></i> New Cost Item'.html_safe, new_pco_path %>
+  </li>
+  <li class="menu-header" role="tab" id="headingTwo">
+      <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <i class="fa fa-eye"></i>
+        <span>View Cost Items</span>
+      </a>
+  </li>
+  <ul id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+    <li><a href="basic_table.html">Allowances</a></li>
+    <li><a href="responsive_table.html">Backcharges</a></li>
+    <li><a href="dynamic_table.html">Claims</a></li>
+    <li><a href="editable_table.html">Insurance</a></li>
+    <li><a href="basic_table.html">Proposals</a></li>
+    <li><a href="responsive_table.html">Void</a></li>
+  </ul>
+  <li class="menu-header" role="tab" id="headingThree">
+    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+      <i class="fa fa-pencil"></i>
+      <span>Process Cost Items</span>
+    </a>
+  </li>
+  <ul id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+    <li><a href="basic_table.html">Allowances</a></li>
+    <li><a href="responsive_table.html">Backcharges</a></li>
+    <li><a href="dynamic_table.html">Claims</a></li>
+    <li><a href="editable_table.html">Insurance</a></li>
+    <li><a href="basic_table.html">Proposals</a></li>
+    <li><a href="responsive_table.html">Void</a></li>
+  </ul>
+
+  <li class="menu-header" role="tab" id="headingFour">
+    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+      <i class="fa fa-file-text-o"></i>
+      <span>Reports</span>
+    </a>
+  </li>
+  <ul id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+    <li><a href="basic_table.html">Full PCO Log</a></li>
+    <li><a href="responsive_table.html">Subcontractor PCO Log</a></li>
+    <li><a href="dynamic_table.html">GC PCO Log</a></li>
+  </ul>
+</ul>

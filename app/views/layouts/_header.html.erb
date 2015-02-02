@@ -6,19 +6,31 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#">SuperStruct</a>
+    <div class="brand">
+      <%= link_to image_tag('logo.png'), root_path, class: 'logo' %>
+    </div>
   </div>
   <div id="navbar" class="navbar-collapse collapse">
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#s">Search</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User Name<span class="caret"></span></a>
-        <ul class="dropdown-menu" role="menu">
-          <li><a href="#">Profile</a></li>
-          <li class="divider"></li>
-          <li><a href="#">Log Out</a></li>
-        </ul>
-      </li>
+    <ul class="nav navbar-nav navbar-right top-menu">
+      <% if user_signed_in? %>
+        <li><input type="text" class="form-control search" placeholder=" Search"></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            <%= image_tag('my_avatar.jpg') %>
+            <span class="username"><%= current_user.full_name %></span>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li><%= link_to('<i class="fa fa-user"></i> Profile'.html_safe, edit_user_registration_path) %> </li>
+            <li><%= link_to('<i class="fa fa-rss"></i> Activity Log'.html_safe, '#') %> </li>
+            <li class="divider"></li>
+            <li><%= link_to('<i class="fa fa-power-off"></i> Log Out'.html_safe, destroy_user_session_path, method: :delete) %></li>
+          </ul>
+        </li>
+      <% else %>
+        <li class="welcome"><%= link_to('Sign Up', new_user_registration_path) %></li>
+        <li class="welcome"><strong><%= link_to('Log In (Demo)', new_user_session_path) %></strong></li>
+      <% end %>
     </ul>
-  </div><!--/.nav-collapse -->
+  </div>
 </nav>
