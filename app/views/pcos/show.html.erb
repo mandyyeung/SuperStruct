@@ -6,8 +6,18 @@
 </p>
 
 <p>
+  <strong>Subcontractor:</strong>
+  <%= @pco.subcontractor.company %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @pco.status.description %>
+</p>
+
+<p>
   <strong>Type:</strong>
-  <%= @pco.type %>
+  <%= @pco.pco_type %>
 </p>
 
 <p>
@@ -136,8 +146,18 @@
 </p>
 
 <p>
-  <strong>Used allowance:</strong>
+  <strong>Used allowance?</strong>
   <%= @pco.used_allowance %>
+</p>
+
+<p>
+  <strong>Billed?</strong>
+  <%= @pco.billed %>
+</p>
+
+<p>
+  <strong>Billed Month:</strong>
+  <%= @pco.billed_month %>
 </p>
 
 <p>

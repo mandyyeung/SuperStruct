@@ -42,6 +42,6 @@ class SubcontractorsController < ApplicationController
     end
 
     def subcontractor_params
-      params.require(:subcontractor).permit(:bp, :company, :contact, :address, :phone, :trade, :contract_value, :logo, :notes)
+      params.require(:subcontractor).permit(:bp, :company, :contact, :address, :phone, :trade, :contract_value, :logo, :notes, :email)
     end
 end

@@ -23,6 +23,8 @@ class PcosController < ApplicationController
   def create
     @pco = Pco.new(pco_params)
     @pco.save
+    @pco.subcontractor = Subcontractor.find(params[:subcontractor_id])
+    @pco.status = Status.find(params[:status_id])
     respond_with(@pco)
   end
 
@@ -42,6 +44,6 @@ class PcosController < ApplicationController
     end
 
     def pco_params
-      params.require(:pco).permit(:num, :type, :description, :discovery, :sub_proposal_num, :al_num, :ddc_co_num, :sub_co_num, :proposal_received, :df_submitted, :df_returned, :sent_to_gt, :cleared_gt, :sent_to_ddc, :ddc_approved, :eao, :approved, :approximate, :proposed, :tstv_estimate, :gt_estimate, :submitted, :ddc_approved, :bc_to, :deduct, :bc_from, :add, :used_allowance, :tdrive)
+      params.require(:pco).permit(:num, :pco_type, :description, :discovery, :sub_proposal_num, :al_num, :ddc_co_num, :sub_co_num, :proposal_received, :df_submitted, :df_returned, :sent_to_gt, :cleared_gt, :sent_to_ddc, :ddc_approved, :eao, :approved, :approximate, :proposed, :tstv_estimate, :gt_estimate, :submitted, :ddc_approved, :bc_to, :deduct, :bc_from, :add, :used_allowance, :tdrive, :billed, :billed_month, :subcontractor_id, :status_id)
     end
 end

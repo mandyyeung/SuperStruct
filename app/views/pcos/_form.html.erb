@@ -16,8 +16,16 @@
     <%= f.text_field :num %>
   </div>
   <div class="field">
-    <%= f.label :type %><br>
-    <%= f.text_field :type %>
+    <%= f.label :subcontractor %><br>
+    <%= f.collection_select(:subcontractor_id, Subcontractor.all, :id, :company) %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.collection_select(:status_id, Status.all, :id, :filter) %>
+  </div>
+  <div class="field">
+    <%= f.label :pco_type %><br>
+    <%= f.text_field :pco_type %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
@@ -122,6 +130,14 @@
   <div class="field">
     <%= f.label :used_allowance %><br>
     <%= f.check_box :used_allowance %>
+  </div>
+  <div class="field">
+    <%= f.label :billed %><br>
+    <%= f.check_box :billed %>
+  </div>
+  <div class="field">
+    <%= f.label :billed_month %><br>
+    <%= f.text_field :billed_month %>
   </div>
   <div class="field">
     <%= f.label :tdrive %><br>

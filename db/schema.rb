@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150203011545) do
+ActiveRecord::Schema.define(version: 20150203011846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20150203011545) do
 
   create_table "pcos", force: :cascade do |t|
     t.decimal  "num"
-    t.string   "type"
+    t.string   "pco_type"
     t.string   "description"
     t.text     "discovery"
     t.integer  "sub_proposal_num"
@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(version: 20150203011545) do
     t.integer  "status_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.boolean  "billed"
+    t.string   "billed_month"
   end
 
   create_table "statuses", force: :cascade do |t|
