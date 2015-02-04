@@ -12,9 +12,9 @@
     </a>
   </li>
   <ul id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-    <li><a href="#">Donaldson East</a></li>
-    <li><a href="#">Giaquinto</a></li>
-    <li><a href="#">Jtrack</a></li>
+    <li><%= link_to "Donaldson East", subcontractor_path(1) %></li>
+    <li><%= link_to "Giaquinto", subcontractor_path(2) %></li>
+    <li><%= link_to "Jtrack", subcontractor_path(3) %></li>
   </ul>
   <li class="menu-header">
     <%= link_to '<i class="fa fa-plus"></i> New Cost Item'.html_safe, new_pco_path %>

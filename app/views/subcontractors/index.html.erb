@@ -12,8 +12,6 @@
       <th>Phone</th>
       <th>Trade</th>
       <th>Contract value</th>
-      <th>Logo</th>
-      <th>Notes</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -28,8 +26,6 @@
         <td><%= subcontractor.phone %></td>
         <td><%= subcontractor.trade %></td>
         <td><%= subcontractor.contract_value %></td>
-        <td><%= subcontractor.logo %></td>
-        <td><%= subcontractor.notes %></td>
         <td><%= link_to 'Show', subcontractor %></td>
         <td><%= link_to 'Edit', edit_subcontractor_path(subcontractor) %></td>
         <td><%= link_to 'Destroy', subcontractor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
